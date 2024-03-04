@@ -1,7 +1,20 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="7ce17f38-8ed8-4668-b2b2-70c0a7ff294c" name="Changes" comment="" />
+    <list default="true" id="7ce17f38-8ed8-4668-b2b2-70c0a7ff294c" name="Changes" comment="">
+      <change beforePath="$PROJECT_DIR$/BTVN7/.idea/.gitignore" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/BTVN7/.idea/misc.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/BTVN7/.idea/modules.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/BTVN7/BTVN7.iml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/BTVN7/out/production/BTVN7/Main.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/BTVN7/out/production/BTVN7/SinhVienBIZ.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/BTVN7/out/production/BTVN7/SinhVienIT.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/BTVN7/out/production/BTVN7/SinhVienTechMaster.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/BTVN7/src/Main.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/BTVN7/src/SinhVienBIZ.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/BTVN7/src/SinhVienIT.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/BTVN7/src/SinhVienTechMaster.java" beforeDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -19,6 +32,7 @@
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/KiemTra-OOP" />
   </component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="TaskManager">
@@ -29,6 +43,7 @@
       <option name="presentableId" value="Default" />
       <updated>1705507548586</updated>
       <workItem from="1705507550087" duration="8000" />
+      <workItem from="1709516095562" duration="46000" />
     </task>
     <servers />
   </component>
