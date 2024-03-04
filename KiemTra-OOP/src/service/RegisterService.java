@@ -20,6 +20,6 @@ public class RegisterService {
             userList.add(new User(newUsername, newEmail, newPassword));
             System.out.println("Chúc mừng bạn tạo thành công tài khoản mới!");
         }else
-            System.out.println("Xin lỗi! Mời bạn tạo lại tài khoản mới!");
+            System.out.println("Tài khoản đã tồn tại, bạn hãy kiểm tra lại tài khoản hoặc email!");
     }
 }

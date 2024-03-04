@@ -23,13 +23,12 @@ public class FogotPass {
                             System.out.println("Đổi mật khẩu thành công!");
                             return true;
                         } else {
-                            System.out.println("Passwword sai định dạng, mời bạn nhập lại passwword");
+                            System.out.println("Passwword sai định dạng, mời bạn nhập lại passwword!");
                         }
                     }while (!check);
-
                 } else {
-                    System.out.println("Email không đúng. Chưa tồn tại tài khoản.");
-                    return false;
+                    System.out.println("Email không đúng với tài khoản!");
+                    break;
                 }
             }
         return true;

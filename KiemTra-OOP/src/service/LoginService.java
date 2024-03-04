@@ -23,10 +23,9 @@ public class LoginService {
                 menu.displaylogin(userList, userService);
                 continue;
             }
-            if (userService.isValidPassword(password, userList)) {
-                System.out.println("Mật khẩu không đúng hoặc không đáp ứng yêu cầu!");
+            if (userService.checkPassword(password, userList)) {
+                System.out.println("Mật khẩu không đúng!");
                 menu.displayloginAgain(userList, userService);
-                continue;
             }
             isValid = true;
         } while (!isValid);

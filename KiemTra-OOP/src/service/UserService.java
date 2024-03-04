@@ -31,20 +31,23 @@ public class UserService {
     }
 
     public boolean isValidPassword(String password,ArrayList<User> userList) {
+            if (password.length() < 7 || password.length() > 15) {
+                return false;
+            }
+            if (!password.matches(".*[A-Z].*")) {
+                return false;
+            }
+            if (!password.matches(".*[.,-_;].*")) {
+                return false;
+            }
+        return true;
+    }
 
+    public boolean checkPassword(String password, ArrayList<User> userList) {
         for (User user : userList) {
             if (user.getPassword().equals(password)) {
                 return false;
             }
-        }
-        if (password.length() < 7 || password.length() > 15) {
-            return false;
-        }
-        if (!password.matches(".*[A-Z].*")) {
-            return false;
-        }
-        if (!password.matches(".*[.,-_;].*")) {
-            return false;
         }
         return true;
     }
@@ -66,16 +69,42 @@ public class UserService {
             }
         }
     }
-
-    public void changeUsername(Scanner scanner, String username, ArrayList<User> userList) {
+    public void changeUsername(Scanner scanner, ArrayList<User> userList) {
+        System.out.println("Mời bạn nhập username mới: ");
+        String newUsername = scanner.nextLine();
+        boolean isUsernameExists = false;
         for (User user : userList) {
-            if (user.getUsername().equals(username)) {
-                System.out.println("Mời bạn nhập username mới: ");
-                String newUsername = scanner.nextLine();
-                user.setUsername(newUsername);
-                System.out.println("Đã thay đổi username cho người dùng: " + username);
+            if (user.getUsername().equals(newUsername)) {
+                isUsernameExists = true;
+                break;
             }
         }
+        while (isUsernameExists) {
+            System.out.println("Tên người dùng đã tồn tại. Mời bạn nhập lại tên khác: ");
+            newUsername = scanner.nextLine();
+            isUsernameExists = false;
+            for (User user : userList) {
+                if (user.getUsername().equals(newUsername)) {
+                    isUsernameExists = true;
+                    break;
+                }
+            }
+        }
+        for (User user : userList) {
+            user.setUsername(newUsername);
+            System.out.println("Đã thay đổi username cho người dùng thành công!");
+            break;
+        }
+//        for (User user : userList) {
+//            if (user.getUsername().equals(newUsername)) {
+//                System.out.println("Mời bạn đổi lại tên cho người dùng:");
+//                newUsername = scanner.nextLine();
+//            } else {
+//                user.setUsername(newUsername);
+//                System.out.println("Đã thay đổi username cho người dùng thành công!");
+//                break;
+//            }
+//        }
     }
 
     public void changePassword(Scanner scanner, String username, ArrayList<User> userList) {

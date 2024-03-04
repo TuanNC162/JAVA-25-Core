@@ -68,7 +68,7 @@ public class Menu {
             choose = Integer.parseInt(SCANNER.nextLine());
             switch (choose){
                 case Constant.DISPLAY_CHANGE_USERNAME:
-                    userService.changeUsername(SCANNER, username, userList);
+                    userService.changeUsername(SCANNER,userList);
                     System.out.println(userList);
                     break;
 
