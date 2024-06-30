@@ -16,7 +16,7 @@ public class RegisterService {
         String newEmail = scanner.nextLine();
         System.out.println("Mời bạn nhập password: ");
         String newPassword = scanner.nextLine();
-        if (userService.isValidUsername(newUsername, userList) && userService.isValidEmail(newEmail, userList) && userService.isValidPassword(newPassword, userList)) {
+        if (userService.isValidUsername(newUsername, userList) == null && userService.checkEmail(newEmail, userList) == null) {
             userList.add(new User(newUsername, newEmail, newPassword));
             System.out.println("Chúc mừng bạn tạo thành công tài khoản mới!");
         }else

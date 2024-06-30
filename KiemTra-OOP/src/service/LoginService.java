@@ -8,27 +8,29 @@ import java.util.Scanner;
 
 public class LoginService {
     public void loginAccount(Scanner scanner, ArrayList<User> userList, UserService userService) {
-        boolean isValid = false;
         Menu menu = new Menu();
         String username;
-        String password;
+        User userCheck;
         do {
             System.out.println("Mời bạn nhập username: ");
             username = scanner.nextLine();
             System.out.println("Mời bạn nhập password: ");
-            password = scanner.nextLine();
+            String password = scanner.nextLine();
+            userCheck = userService.isValidUsername(username,userList);
 
-            if (userService.isValidUsername(username, userList)) {
+            if (userCheck == null) {
                 System.out.println("Kiểm tra lại username!");
                 menu.displaylogin(userList, userService);
                 continue;
             }
-            if (userService.checkPassword(password, userList)) {
+            if (userCheck.getPassword().equals(password)) {
+                System.out.println("Đăng nhập thành công");
+                menu.displayloginWelcome(userList, username, userService);
+            } else {
                 System.out.println("Mật khẩu không đúng!");
                 menu.displayloginAgain(userList, userService);
             }
-            isValid = true;
-        } while (!isValid);
-        menu.displayloginWelcome(userList, username, userService);
+        } while (userCheck == null);
     }
+
 }

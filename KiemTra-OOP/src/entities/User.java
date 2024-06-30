@@ -1,5 +1,10 @@
 package entities;
 
+import service.UserService;
+
+import java.util.ArrayList;
+import java.util.Scanner;
+
 public class User {
     private String username;
     private String email;
@@ -10,6 +15,8 @@ public class User {
         this.email = email;
         this.password = password;
     }
+
+
 
     @Override
     public String toString() {
@@ -43,4 +50,33 @@ public class User {
     public void setPassword(String password) {
         this.password = password;
     }
+
+
+//    public void passwordChange(Scanner scanner) {
+//        System.out.print("Enter your new password: ");
+//        String newPassword = scanner.nextLine();
+//
+//        if(user.getPassword().equals(newPassword))
+//            System.out.println("Please enter another password...");
+//        else {
+//            if(userService.passwordValidator(newPassword)){
+//                user.setPassword(newPassword);
+//                System.out.println("You are change password change successfully");
+//            } else
+//                System.out.println("Please enter a password from 7 to 15 characters, containing at least 1 capital letter, 1 special character");
+//        }
+//    }
+//
+//
+//    public void forgotPassword(Scanner scanner) {
+//        System.out.print("Enter your email: ");
+//        String email = scanner.nextLine();
+//
+//        if(user.getEmail().equals(email)) {
+//            passwordChange(scanner, user);
+//        } else {
+//            System.out.println("Email no exist. Please register new an account");
+//        }
+//    }
+
 }

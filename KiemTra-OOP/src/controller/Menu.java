@@ -47,7 +47,7 @@ public class Menu {
                     loginService.loginAccount(SCANNER, userList, userService);
                     break;
                 case Constant.DISPLAY_FOGOTPASS_INPUT:
-                    boolean getPasswordSuccessful = fogotPass.fogotPass(SCANNER, userList, userService);
+                    boolean getPasswordSuccessful = fogotPass.forgotPass(SCANNER, userList, userService);
                     if (getPasswordSuccessful) {
                         displaylogin(userList, userService);
                     }

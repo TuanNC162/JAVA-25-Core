@@ -8,13 +8,22 @@ import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
 public class UserService {
-    public boolean isValidUsername(String username, ArrayList<User> userList) {
+    public User   isValidUsername(String username, ArrayList<User> userList) {
         for (User user : userList) {
             if (user.getUsername().equals(username)) {
-                return false;
+                return user;
             }
         }
-        return true;
+        return null;
+    }
+
+    public User checkEmail(String email, ArrayList<User> userList){
+        for (User user : userList) {
+            if (user.getEmail().equals(email)) {
+                return user;
+            }
+        }
+        return null;
     }
 
     public boolean isValidEmail(String email, ArrayList<User> userList) {
@@ -22,13 +31,10 @@ public class UserService {
         Pattern pattern = Pattern.compile(emailRegex);
         Matcher matcher = pattern.matcher(email);
         boolean isValidFormat = matcher.matches();
-        for (User user : userList) {
-            if (user.getEmail().equals(email)) {
-                return false;
-            }
-        }
-        return isValidFormat;
+
+        return true;
     }
+
 
     public boolean isValidPassword(String password,ArrayList<User> userList) {
             if (password.length() < 7 || password.length() > 15) {
@@ -43,13 +49,13 @@ public class UserService {
         return true;
     }
 
-    public boolean checkPassword(String password, ArrayList<User> userList) {
+    public User checkPassword(String password, ArrayList<User> userList) {
         for (User user : userList) {
             if (user.getPassword().equals(password)) {
-                return false;
+                return user;
             }
         }
-        return true;
+        return null;
     }
 
     public void changeEmail(Scanner scanner, String username, ArrayList<User> userList) {
