@@ -56,7 +56,7 @@ LIMIT 3;
 -- 9. Lấy thông tin về khách hàng đã đặt hàng nhiều hơn một lần trong khoảng thời gian cụ thể từ ngày A -> ngày B (customer_id, customer_name, total_orders)
 SELECT Customers.customer_id, Customers.customer_name, COUNT(DISTINCT Orders.order_id) AS soluong
 FROM Customers
-JOIN Orders ON Customers.customer_id = Orders.customer_id
+INNER JOIN Orders ON Customers.customer_id = Orders.customer_id
 WHERE Orders.order_date BETWEEN '2024-02-05' AND '2024-12-02'
 GROUP BY Customers.customer_id, Customers.customer_name
 HAVING soluong > 1;
