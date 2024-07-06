@@ -62,11 +62,11 @@ GROUP BY Customers.customer_id, Customers.customer_name
 HAVING soluong > 1;
 
 -- 10. Lấy thông tin về các sản phẩm đã được đặt hàng nhiều lần nhất và số lượng đơn đặt hàng tương ứng (product_id, product_name, total_ordered)
-SELECT Products.product_id, Products.product_name, sum(OrderDetails.quantity) AS total_ordered
+SELECT Products.product_id, Products.product_name, sum(OrderDetails.quantity) AS soluong
 FROM OrderDetails
 INNER JOIN Orders ON Orders.order_id = OrderDetails.order_id
 INNER JOIN Products ON Products.product_id = OrderDetails.product_id
 INNER JOIN Customers ON Customers.customer_id = Orders.customer_id
 GROUP BY product_id, product_name
-ORDER BY total_ordered DESC
+ORDER BY soluong DESC
 LIMIT 1;
